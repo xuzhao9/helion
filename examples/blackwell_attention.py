@@ -90,9 +90,9 @@ def _fma_f32x2(a: torch.Tensor, b: torch.Tensor, c: torch.Tensor) -> torch.Tenso
             _triton_range_value_data_partition_factor=2,
             _triton_config_maxRegAutoWS=maxreg,
         )
-        for N in [64, 128]
+        for N in [128]
         for OUTER_LOOP in [True]
-        for maxreg in [152, 192]
+        for maxreg in [152]
     ],
     static_shapes=True,
     autotune_accuracy_check=False,
